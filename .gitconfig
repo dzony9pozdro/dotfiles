@@ -1,0 +1,6 @@
+[user]
+	email = jan@tomaka.it
+	name = dzony9pozdro
+	name = Jan Tomaka
+[credential]
+	helper = osxkeychain

@@ -1,0 +1,25 @@
+{
+  "title": "Cmd+8 -> Backspace",
+  "rules": [
+    {
+      "description": "Map Command + 8 to Backspace",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "8",
+            "modifiers": {
+              "mandatory": ["left_command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

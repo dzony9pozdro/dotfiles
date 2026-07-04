@@ -1,0 +1,25 @@
+{
+  "title": "Disable Cmd+M (minimize)",
+  "rules": [
+    {
+      "description": "Disable Cmd+M minimize globally",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": ["command"],
+              "optional": ["caps_lock"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
