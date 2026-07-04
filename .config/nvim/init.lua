@@ -4,7 +4,7 @@ vim.g.maplocalleader = ' '
 
 vim.o.clipboard = 'unnamedplus'
 
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 vim.o.relativenumber = true
 
@@ -39,10 +39,6 @@ end
 vim.keymap.set('n', '<leader>o', '<C-o>')
 vim.keymap.set('n', '<leader>i', '<C-i>')
 vim.keymap.set('n', '<leader>r', '<C-r>')
-
--- single quotes: a -> '
-
--- double quotes: s -> "
 
 vim.keymap.set('n', '<leader>td', ToggleDiagnostics)
 

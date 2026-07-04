@@ -44,11 +44,12 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["q","a","s","d","f","g","z","x","c","v","b"]
+persistent-workspaces = ["s","d","f"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
+
 on-mode-changed = []
 
 # Possible values: (qwerty|dvorak|colemak)
@@ -65,6 +66,7 @@ on-mode-changed = []
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
+
     inner.horizontal = 0
     inner.vertical =   0
     outer.left =       0
@@ -118,37 +120,17 @@ on-mode-changed = []
     
     [workspace-to-monitor-force-assignment]
     
-        a = 1   
         s = 1
         d = 1
         f = 1
-        g = 1
-        h = 1
-        z = 1
-        x = 1
-        c = 1
-        v = 1
-
         q = 2
         w = 2
         e = 2
 
 
     [[on-window-detected]]
-    if.app-id = "com.hnc.Discord"
-    run = ["move-node-to-workspace q"]
-
-    [[on-window-detected]]
     if.app-id = "md.obsidian"
     run = ["move-node-to-workspace z"]
-
-    [[on-window-detected]]
-    if.app-id = "com.rongyuan.driverElectron"
-    run = ["move-node-to-workspace a"]
-
-    [[on-window-detected]]
-    if.app-id = "com.huion.HuionTablet"
-    run = ["move-node-to-workspace a"]
 
     [[on-window-detected]]
     if.app-id = "com.spotify.client"
@@ -158,28 +140,15 @@ on-mode-changed = []
     if.app-id = "app.zen-browser.zen"
     run = ["move-node-to-workspace d"]
 
-    # [[on-window-detected]]
-    # if.app-id = "com.electron.realtimeboard"
-    # run = ["move-node-to-workspace f"]
-
     [[on-window-detected]]
-    if.app-id = "net.whatsapp.WhatsApp"
-    run = ["move-node-to-workspace g"]
-
-    [[on-window-detected]]
-    if.app-id = "com.googlecode.iterm2"
+    if.app-id = "org.alacritty"
     run = ["move-node-to-workspace f"]
-    #
-    # [[on-window-detected]]
-    # if.app-id = "com.apple.mail"
-    # run = ["move-node-to-workspace l"]
-    #
-    # [[on-window-detected]]
-    # if.app-id = "com.apple.finder"
-    # run = ["move-node-to-workspace l"]
 
 
-[mode.main.binding]
+    [mode.main.binding]
+
+    cmd-backspace = 'close-all-windows-but-current'
+
     ctrl-alt-shift-y = 'exec-and-forget ~/.config/aerospace/toggle-dock-delay.sh'
     ctrl-alt-shift-t = 'exec-and-forget ~/.config/aerospace/toggle-mtmr.sh'
 
@@ -220,7 +189,7 @@ on-mode-changed = []
     cmd-ctrl-alt-shift-v = 'move-node-to-workspace v'
     cmd-ctrl-alt-shift-b = 'move-node-to-workspace b'
 
- # EE WW
+     # EE WW
     ctrl-alt-shift-e = 'layout accordion horizontal'
     ctrl-alt-shift-w = 'layout tiles horizontal'
 
@@ -233,12 +202,10 @@ on-mode-changed = []
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
-# 'service' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-[mode.service.binding]
+    # 'service' binding mode declaration.
+    # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+    [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
     backspace = ['close-all-windows-but-current', 'mode main']
-
-

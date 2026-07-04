@@ -108,4 +108,17 @@ return {
       server = { override = false }, -- we register tailwindcss via vim.lsp.config; skip the deprecated lspconfig path
     },
   },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'catppuccin-frappe', -- or whatever you're using
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+        },
+      }
+    end,
+  },
 }
