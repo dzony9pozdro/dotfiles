@@ -1,4 +1,3 @@
-
 [window]
 dynamic_padding = true
 decorations = "Buttonless"
@@ -13,13 +12,13 @@ y = 10
 size = 19
 
 [font.normal]
-family = "FiraCode Nerd Font Propo"
+family = "AnonymicePro Nerd Font"
 
 [font.bold]
-family = "FiraCode Nerd Font Propo"
+family = "AnonymicePro Nerd Font"
 
 [font.italic]
-family = "FiraCode Nerd Font Propo"
+family = "AnonymicePro Nerd Font"
 
 [keyboard]
 

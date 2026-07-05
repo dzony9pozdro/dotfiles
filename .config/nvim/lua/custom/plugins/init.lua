@@ -3,6 +3,11 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+  { 'rebelot/kanagawa.nvim' },
+  { 'EdenEast/nightfox.nvim' },
+  { 'sainnhe/everforest' },
+  { 'navarasu/onedark.nvim' },
+  { 'Mofiqul/dracula.nvim' },
   {
     'kylechui/nvim-surround',
     event = 'VeryLazy',
@@ -141,5 +146,60 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
+  },
+
+  {
+    'zaldih/themery.nvim',
+    lazy = false,
+    config = function()
+      require('themery').setup {
+        themes = {
+          'gruvbox',
+          'tokyonight-night',
+          'tokyonight-storm',
+          'catppuccin-frappe',
+          'catppuccin-macchiato',
+          'catppuccin-mocha',
+          'rose-pine-main',
+          'rose-pine-moon',
+          'vague',
+          'kanagawa-wave',
+          'kanagawa-dragon',
+          -- 'kanagawa-lotus',
+          'nightfox',
+          -- 'dayfox',
+          'duskfox',
+          'nordfox',
+          'terafox',
+          'carbonfox',
+          'dracula',
+          {
+            name = 'Gruvbox Hard',
+            colorscheme = 'gruvbox',
+            before = [[ require('gruvbox').setup{ transparent_mode = false, contrast = 'hard' };   vim.cmd.colorscheme('gruvbox') ]],
+          },
+          {
+            name = 'Gruvbox Medium',
+            colorscheme = 'gruvbox',
+            before = [[ require('gruvbox').setup{ transparent_mode = false, contrast = 'medium' }; vim.cmd.colorscheme('gruvbox') ]],
+          },
+          {
+            name = 'Gruvbox Soft',
+            colorscheme = 'gruvbox',
+            before = [[ require('gruvbox').setup{ transparent_mode = false, contrast = 'soft' };   vim.cmd.colorscheme('gruvbox') ]],
+          },
+          { name = 'OneDark', colorscheme = 'onedark', before = [[ require('onedark').setup{ style = 'dark' };   require('onedark').load() ]] },
+          { name = 'OneDark Darker', colorscheme = 'onedark', before = [[ require('onedark').setup{ style = 'darker' }; require('onedark').load() ]] },
+          { name = 'OneDark Cool', colorscheme = 'onedark', before = [[ require('onedark').setup{ style = 'cool' };   require('onedark').load() ]] },
+          { name = 'OneDark Deep', colorscheme = 'onedark', before = [[ require('onedark').setup{ style = 'deep' };   require('onedark').load() ]] },
+          { name = 'OneDark Warm', colorscheme = 'onedark', before = [[ require('onedark').setup{ style = 'warm' };   require('onedark').load() ]] },
+          { name = 'OneDark Warmer', colorscheme = 'onedark', before = [[ require('onedark').setup{ style = 'warmer' }; require('onedark').load() ]] },
+          { name = 'Everforest Hard', colorscheme = 'everforest', before = [[ vim.g.everforest_background = 'hard' ]] },
+          { name = 'Everforest Medium', colorscheme = 'everforest', before = [[ vim.g.everforest_background = 'medium' ]] },
+          { name = 'Everforest Soft', colorscheme = 'everforest', before = [[ vim.g.everforest_background = 'soft' ]] },
+        },
+        livePreview = true,
+      }
+    end,
   },
 }

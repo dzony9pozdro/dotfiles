@@ -42,6 +42,8 @@ vim.keymap.set('n', '<leader>r', '<C-r>')
 
 vim.keymap.set('n', '<leader>td', ToggleDiagnostics)
 
+vim.keymap.set('n', '<leader>h', function() vim.cmd 'Themery' end, { desc = 'Pick theme' })
+
 vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv", { noremap = true })
 vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv", { noremap = true })
 vim.keymap.set('i', 'jk', '<Esc>', { noremap = true })
@@ -764,17 +766,7 @@ require('lazy').setup({
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       --
-      -- vim.cmd.colorscheme 'tokyonight-night'
-      -- vim.cmd.colorscheme('catppuccin')
-      -- vim.cmd.colorscheme 'catppuccin-frappe'
-      -- vim.cmd.colorscheme 'catppuccin-macchiato'
-      -- vim.cmd.colorscheme 'catppuccin-mocha'
-      -- vim.cmd.colorscheme 'rose-pine'
-      -- vim.cmd.colorscheme('rose-pine-main')
-      -- vim.cmd.colorscheme 'rose-pine-moon'
-      -- vim.cmd.colorscheme 'vague'
-      vim.cmd.colorscheme 'gruvbox'
-      --
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
 
