@@ -121,4 +121,16 @@ return {
       }
     end,
   },
+  {
+    'nvzone/floaterm',
+    dependencies = { 'nvzone/volt' },
+    config = function()
+      require('floaterm').setup {}
+
+      local ft = require 'floaterm'
+
+      -- Only keybind you actually want
+      vim.keymap.set('n', '<leader>tt', function() ft.toggle() end)
+    end,
+  },
 }

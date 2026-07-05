@@ -13,7 +13,6 @@ alias font-jetbrains="sed -i '' 's/^family = .*/family = \"JetBrainsMono Nerd Fo
 alias font-hack="sed -i '' 's/^family = .*/family = \"Hack Nerd Font\"/' ~/.config/alacritty/alacritty.toml"
 alias font-victor="sed -i '' 's/^family = .*/family = \"VictorMono Nerd Font\"/' ~/.config/alacritty/alacritty.toml"
 
-
 alias please='sudo $(fc -ln -1)'
 alias cpwd="pwd | pbcopy"
 alias c="pbcopy"
@@ -29,7 +28,7 @@ alias cmtmr="grep -v '^\s*//' ~/Library/Application\ Support/MTMR/items.json | p
 alias mtmr="nvim /Users/Jan/Library/Application\ Support/MTMR/items.json"
 
 #nvim
-
+alias plug='nvim +"normal G-1" ~/.dotfiles/.config/nvim/lua/custom/plugins/init.lua'
 alias theme='nvim +760 ~/.config/nvim/init.lua'
 alias nvc='nvim ~/.config/nvim/'
 alias nv='nvim ~/Documents/code'
