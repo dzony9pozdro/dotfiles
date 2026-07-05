@@ -766,14 +766,14 @@ require('lazy').setup({
       --
       -- vim.cmd.colorscheme 'tokyonight-night'
       -- vim.cmd.colorscheme('catppuccin')
-      vim.cmd.colorscheme 'catppuccin-frappe'
+      -- vim.cmd.colorscheme 'catppuccin-frappe'
       -- vim.cmd.colorscheme 'catppuccin-macchiato'
       -- vim.cmd.colorscheme 'catppuccin-mocha'
       -- vim.cmd.colorscheme 'rose-pine'
       -- vim.cmd.colorscheme('rose-pine-main')
       -- vim.cmd.colorscheme 'rose-pine-moon'
       -- vim.cmd.colorscheme 'vague'
-      -- vim.cmd.colorscheme 'gruvbox'
+      vim.cmd.colorscheme 'gruvbox'
       --
     end,
   },

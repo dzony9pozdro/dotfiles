@@ -114,7 +114,7 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          theme = 'catppuccin-frappe', -- or whatever you're using
+          theme = 'auto',
           component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
         },

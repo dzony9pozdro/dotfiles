@@ -13,47 +13,22 @@ y = 10
 size = 19
 
 [font.normal]
-family = "FiraCode Nerd Font Mono"
+family = "FiraCode Nerd Font Propo"
 
 [font.bold]
-family = "FiraCode Nerd Font Mono"
+family = "FiraCode Nerd Font Propo"
 
 [font.italic]
-family = "FiraCode Nerd Font Mono"
-
-[colors.primary]
-background = "#1e1e2e"
-foreground = "#ffffff"
-
-[colors.normal]
-black = "#1a1a1a"
-red = "#f38ba8"
-green = "#a6e3a1"
-yellow = "#f9e2af"
-blue = "#89b4fa"
-magenta = "#cba6f7"
-cyan = "#94e2d5"
-white = "#ffffff"
-
-[colors.bright]
-black = "#4a4a4a"
-red = "#f38ba8"
-green = "#a6e3a1"
-yellow = "#f9e2af"
-blue = "#89b4fa"
-magenta = "#cba6f7"
-cyan = "#94e2d5"
-white = "#ffffff"
+family = "FiraCode Nerd Font Propo"
 
 [keyboard]
 
 [[keyboard.bindings]]
 key = "S"
 mods = "Command"
-chars = "\x08"  
+chars = "\b"
 
 [[keyboard.bindings]]
-
 key = "C"
 mods = "Command"
 action = "Copy"
@@ -84,4 +59,4 @@ mods = "Command"
 action = "DecreaseFontSize"
 
 [general]
-import = ["/Users/jan/.config/alacritty/themes/catppuccin_mocha.toml"]
+import = ["/Users/jan/.config/alacritty/themes/autumn.toml"]

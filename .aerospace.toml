@@ -118,14 +118,14 @@ on-mode-changed = []
     #alt-shift-l = 'move right'
  
     
-    [workspace-to-monitor-force-assignment]
-    
-        s = 1
-        d = 1
-        f = 1
-        q = 2
-        w = 2
-        e = 2
+    # [workspace-to-monitor-force-assignment]
+    #
+    #     s = 1
+    #     d = 1
+    #     f = 1
+    #     q = 2
+    #     w = 2
+    #     e = 2
 
 
     [[on-window-detected]]

@@ -7,20 +7,14 @@ export TERM=xterm-256color
 ZSH_DISABLE_COMPFIX=true
 
 alias karab="cd /Users/Jan/.config/karabiner/assets/complex_modifications"
-
-
 alias dots="cd ~/.dotfiles"
-# Alacritty font switcher
-alias font-fira="sed -i '' 's/^family = .*/family = \"FiraCode Nerd Font Mono\"/' ~/.config/alacritty/alacritty.toml"
-alias font-jetbrains="sed -i '' 's/^family = .*/family = \"JetBrainsMono Nerd Font\"/' ~/.config/alacritty/alacritty.toml"
-alias font-hack="sed -i '' 's/^family = .*/family = \"Hack Nerd Font\"/' ~/.config/alacritty/alacritty.toml"
-alias font-victor="sed -i '' 's/^family = .*/family = \"VictorMono Nerd Font\"/' ~/.config/alacritty/alacritty.toml"
 
 alias please='sudo $(fc -ln -1)'
 alias cpwd="pwd | pbcopy"
 alias c="pbcopy"
 alias v="pbpaste"
 
+alias font="~/.config/alacritty/font-switch.sh"
 
 alias rb="ruby"
 alias py="python3"
@@ -52,9 +46,14 @@ alias nva='nvim ~/.aerospace.toml'
 alias rc='nvim ~/.zshrc'
 alias src='source ~/.zshrc'
 
-# AeroSpace ping loop aliases
-alias stopaerospaceping='launchctl unload ~/Library/LaunchAgents/com.user.aerospace-ping.plist'
-alias startaerospaceping='launchctl load ~/Library/LaunchAgents/com.user.aerospace-ping.plist'
+# # AeroSpace ping loop aliases
+# alias stopaerospaceping='launchctl unload ~/Library/LaunchAgents/com.user.aerospace-ping.plist'
+# alias startaerospaceping='launchctl load ~/Library/LaunchAgents/com.user.aerospace-ping.plist'
+#
+
+alias nap='defaults write org.alacritty NSAppSleepDisabled -bool NO; defaults write io.alacritty NSAppSleepDisabled -bool NO; defaults write app.zen-browser.zen NSAppSleepDisabled -bool NO; defaults write com.spotify.client NSAppSleepDisabled -bool NO && echo "💤 App Nap re-enabled for Alacritty, Zen, and Spotify!"'
+alias nonap='defaults write org.alacritty NSAppSleepDisabled -bool YES; defaults write io.alacritty NSAppSleepDisabled -bool YES; defaults write app.zen-browser.zen NSAppSleepDisabled -bool YES; defaults write com.spotify.client NSAppSleepDisabled -bool YES && echo "App Nap disabled for Alacritty, Zen, and Spotify."'
+
 
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 

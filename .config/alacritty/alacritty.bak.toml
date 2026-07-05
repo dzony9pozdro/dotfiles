@@ -1,31 +1,33 @@
-# Basic Alacritty Configuration for macOS
 
 [window]
-padding = { x = 10, y = 10 }
 dynamic_padding = true
 decorations = "Buttonless"
 opacity = 1
 blur = false
 
+[window.padding]
+x = 10
+y = 10
+
 [font]
-size = 19.0
+size = 19
 
 [font.normal]
-family = "FiraCode Nerd Font Mono"
+family = "AnonymicePro Nerd Font"
 
 [font.bold]
-family = "FiraCode Nerd Font Mono"
+family = "AnonymicePro Nerd Font"
 
 [font.italic]
-family = "FiraCode Nerd Font Mono"
+family = "AnonymicePro Nerd Font"
 
-# Colors (Tomorrow Night Bright Theme)
-[colors]
-primary = { background = "#1e1e2e", foreground = "#ffffff" }
-normal = { black = "#1a1a1a", red = "#f38ba8", green = "#a6e3a1", yellow = "#f9e2af", blue = "#89b4fa", magenta = "#cba6f7", cyan = "#94e2d5", white = "#ffffff" }
-bright = { black = "#4a4a4a", red = "#f38ba8", green = "#a6e3a1", yellow = "#f9e2af", blue = "#89b4fa", magenta = "#cba6f7", cyan = "#94e2d5", white = "#ffffff" }
+[keyboard]
 
-# Key Bindings
+[[keyboard.bindings]]
+key = "S"
+mods = "Command"
+chars = "\b"
+
 [[keyboard.bindings]]
 key = "C"
 mods = "Command"
@@ -44,7 +46,7 @@ action = "Quit"
 [[keyboard.bindings]]
 key = "N"
 mods = "Command"
-action = "SpawnNewInstance"
+action = "CreateNewWindow"
 
 [[keyboard.bindings]]
 key = "Plus"
@@ -55,3 +57,6 @@ action = "IncreaseFontSize"
 key = "Minus"
 mods = "Command"
 action = "DecreaseFontSize"
+
+[general]
+import = ["/Users/jan/.config/alacritty/themes/carbonfox.toml"]
