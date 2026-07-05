@@ -8,8 +8,8 @@
     <key>ProgramArguments</key>
     <array>
       <string>/bin/bash</string>
-      <string>-c</string>
-      <string>while true; do /usr/local/bin/aerospace list-apps >/dev/null 2>&1; sleep 4; done</string>
+      <string>-c</string>   
+      <string>while true; do /usr/local/bin/aerospace list-apps >/dev/null 2>&amp;1 sleep 4; done</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
