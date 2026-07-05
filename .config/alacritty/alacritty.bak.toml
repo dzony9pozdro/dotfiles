@@ -1,0 +1,57 @@
+# Basic Alacritty Configuration for macOS
+
+[window]
+padding = { x = 10, y = 10 }
+dynamic_padding = true
+decorations = "Buttonless"
+opacity = 1
+blur = false
+
+[font]
+size = 19.0
+
+[font.normal]
+family = "FiraCode Nerd Font Mono"
+
+[font.bold]
+family = "FiraCode Nerd Font Mono"
+
+[font.italic]
+family = "FiraCode Nerd Font Mono"
+
+# Colors (Tomorrow Night Bright Theme)
+[colors]
+primary = { background = "#1e1e2e", foreground = "#ffffff" }
+normal = { black = "#1a1a1a", red = "#f38ba8", green = "#a6e3a1", yellow = "#f9e2af", blue = "#89b4fa", magenta = "#cba6f7", cyan = "#94e2d5", white = "#ffffff" }
+bright = { black = "#4a4a4a", red = "#f38ba8", green = "#a6e3a1", yellow = "#f9e2af", blue = "#89b4fa", magenta = "#cba6f7", cyan = "#94e2d5", white = "#ffffff" }
+
+# Key Bindings
+[[keyboard.bindings]]
+key = "C"
+mods = "Command"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Command"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "Q"
+mods = "Command"
+action = "Quit"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Command"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "Plus"
+mods = "Command"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Command"
+action = "DecreaseFontSize"
