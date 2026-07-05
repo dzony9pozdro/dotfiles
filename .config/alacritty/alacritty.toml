@@ -71,7 +71,7 @@ action = "Quit"
 [[keyboard.bindings]]
 key = "N"
 mods = "Command"
-action = "SpawnNewInstance"
+action = "CreateNewWindow"
 
 [[keyboard.bindings]]
 key = "Plus"
