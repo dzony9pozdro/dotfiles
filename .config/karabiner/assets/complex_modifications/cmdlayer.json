@@ -1,0 +1,76 @@
+{
+  "title": "Command Symbol Layer - Ghost Layer v10 (MacBook ISO fixed)",
+  "rules": [
+    {
+      "description": "Right Command = Normal Command",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "right_command", "modifiers": { "optional": ["any"] } },
+          "to": [{ "key_code": "right_command" }]
+        }
+      ]
+    },
+    {
+      "description": "Left Command activates Symbol Layer",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": { "key_code": "left_command", "modifiers": { "optional": ["any"] } },
+          "to": [{ "set_variable": { "name": "symbol_layer", "value": 1 } }],
+          "to_after_key_up": [{ "set_variable": { "name": "symbol_layer", "value": 0 } }]
+        }
+      ]
+    },
+    {
+      "description": "Symbol Layer (Left Cmd held)",
+      "manipulators": [
+        { "type": "basic", "from": { "key_code": "h" }, "to": [{ "key_code": "left_arrow" }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "j" }, "to": [{ "key_code": "down_arrow" }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "k" }, "to": [{ "key_code": "up_arrow" }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "l" }, "to": [{ "key_code": "right_arrow" }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+
+        {
+          "type": "basic",
+          "from": { "key_code": "8" },
+          "to": [{ "key_code": "delete_or_backspace" }],
+          "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }]
+        },
+
+        {
+          "type": "basic",
+          "from": { "key_code": "q" },
+          "to": [{
+            "key_code": "non_us_backslash",
+            "modifiers": ["left_shift"]
+          }],
+          "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }],
+          "description": "Left Cmd + Q = ~ (ISO correct)"
+        },
+
+        {
+          "type": "basic",
+          "from": { "key_code": "w" },
+          "to": [{
+            "key_code": "non_us_backslash"
+          }],
+          "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }],
+          "description": "Left Cmd + W = ` (ISO correct)"
+        },
+
+        { "type": "basic", "from": { "key_code": "y" }, "to": [{ "key_code": "9", "modifiers": ["left_shift"] }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "u" }, "to": [{ "key_code": "0", "modifiers": ["left_shift"] }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "i" }, "to": [{ "key_code": "equal_sign" }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "o" }, "to": [{ "key_code": "equal_sign", "modifiers": ["left_shift"] }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "n" }, "to": [{ "key_code": "9", "modifiers": ["left_shift"] }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "m" }, "to": [{ "key_code": "9", "modifiers": ["left_shift"] }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "slash" }, "to": [{ "key_code": "hyphen" }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+
+
+        { "type": "basic", "from": { "key_code": "d" }, "to": [{ "key_code": "open_bracket" }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "f" }, "to": [{ "key_code": "open_bracket" }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+
+        { "type": "basic", "from": { "key_code": "g" }, "to": [{ "key_code": "open_bracket", "modifiers": ["left_shift"] }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+        { "type": "basic", "from": { "key_code": "h" }, "to": [{ "key_code": "close_bracket", "modifiers": ["left_shift"] }], "conditions": [{ "type": "variable_if", "name": "symbol_layer", "value": 1 }] },
+      ] 
+    }
