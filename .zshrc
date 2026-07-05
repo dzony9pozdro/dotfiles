@@ -1,3 +1,5 @@
+DISABLE_AUTO_UPDATE="true"
+
 export PATH="/usr/local/bin/nvim/bin:$PATH"
 
 export TERM=xterm-256color
@@ -7,6 +9,7 @@ ZSH_DISABLE_COMPFIX=true
 alias karab="cd /Users/Jan/.config/karabiner/assets/complex_modifications"
 
 
+alias dots="cd ~/.dotfiles"
 # Alacritty font switcher
 alias font-fira="sed -i '' 's/^family = .*/family = \"FiraCode Nerd Font Mono\"/' ~/.config/alacritty/alacritty.toml"
 alias font-jetbrains="sed -i '' 's/^family = .*/family = \"JetBrainsMono Nerd Font\"/' ~/.config/alacritty/alacritty.toml"
@@ -134,6 +137,18 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+
+# Speed up compinit by caching it
+
+autoload -Uz compinit
+NOW=$(date +%s)
+DUMP_TIME=$(stat -f %m ~/.zcompdump 2>/dev/null || echo 0)
+
+if [ $((NOW - DUMP_TIME)) -gt 86400 ]; then
+  compinit
+else
+  compinit -C
+fi
 
 source $ZSH/oh-my-zsh.sh
 
