@@ -36,8 +36,6 @@ end
 --
 --
 
-vim.keymap.set('v', '<D-g>', '<gv', { noremap = true })
-
 vim.keymap.set('n', '<leader>o', '<C-o>')
 vim.keymap.set('n', '<leader>i', '<C-i>')
 vim.keymap.set('n', '<leader>r', '<C-r>')
