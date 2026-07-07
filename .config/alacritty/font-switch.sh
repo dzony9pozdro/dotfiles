@@ -15,3 +15,4 @@ fi
 # Apply the change
 sed -i '' "s/^[[:space:]]*family =.*/family = \"$selected_font\"/" "$CONFIG_FILE"
 echo "🎯 Set Alacritty font to: \"$selected_font\""
+touch alacritty.toml
