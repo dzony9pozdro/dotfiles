@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the config file
-CONFIG_FILE="$HOME/.config/alacritty/alacritty.toml"
+CONFIG_FILE="$HOME/.config/alacritty/font.toml"
 
 # 1. Get unique list of installed font families, filtered for Nerd Fonts
 # 2. Use 'fzf' to let you fuzzy-search/select
