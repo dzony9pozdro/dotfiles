@@ -6,10 +6,15 @@ export TERM=xterm-256color
 
 ZSH_DISABLE_COMPFIX=true
 
+alias hh="cd .."
+alias hhh="cd ../.."
+
 alias pingstart="launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.aerospace.keepalive.plist"
 alias pingstop="launchctl bootout gui/$(id -u)/com.aerospace.keepalive"
+# git
 
-
+source ~/.dotfiles/scripts/clone.zsh
+alias desk="cd ~/Desktop/"
 alias karab="cd /Users/Jan/.config/karabiner/assets/complex_modifications"
 alias dots="cd ~/.dotfiles"
 

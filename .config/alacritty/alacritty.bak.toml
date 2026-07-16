@@ -9,18 +9,6 @@ blur = false
 x = 10
 y = 10
 
-[font]
-size = 19
-
-[font.normal]
-family = "AnonymicePro Nerd Font"
-
-[font.bold]
-family = "AnonymicePro Nerd Font"
-
-[font.italic]
-family = "AnonymicePro Nerd Font"
-
 [keyboard]
 
 [[keyboard.bindings]]
@@ -59,4 +47,4 @@ mods = "Command"
 action = "DecreaseFontSize"
 
 [general]
-import = ["/Users/jan/.config/alacritty/themes/carbonfox.toml"]
+import = ["~/.config/alacritty/font.toml","/Users/jan/.config/alacritty/themes/terafox.toml"]

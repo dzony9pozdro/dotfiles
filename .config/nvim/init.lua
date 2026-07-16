@@ -1,4 +1,4 @@
--- Set <space> as the leader key
+-- Setde <space> as the leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -9,6 +9,11 @@ vim.g.have_nerd_font = true
 vim.o.relativenumber = true
 
 vim.opt.termguicolors = true
+
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -390,13 +395,13 @@ require('lazy').setup({
       })
 
       -- Override default behavior and theme when searching
-      vim.keymap.set('n', '<leader>/', function()
+      vim.keymap.set('n', '<leader>j', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
           previewer = false,
         })
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      end, { desc = '[j] Fuzzily search in current buffer' })
 
       -- It's also possible to pass additional configuration options.
       --  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -541,6 +546,7 @@ require('lazy').setup({
         basedpyright = {},
         ruby_lsp = {},
         tailwindcss = {},
+        clangd = {},
         emmet_language_server = {
           filetypes = { 'html', 'eruby', 'css', 'scss', 'javascriptreact', 'typescriptreact' },
         },
@@ -569,6 +575,7 @@ require('lazy').setup({
           'ruby-lsp',
           'tailwindcss-language-server',
           'emmet-language-server',
+          'clangd',
         },
       }
 
@@ -605,11 +612,11 @@ require('lazy').setup({
       })
       vim.lsp.enable 'lua_ls'
       -- Swift/iOS development
-      vim.lsp.config('sourcekit', {
-        cmd = { 'xcrun', 'sourcekit-lsp' },
-        capabilities = capabilities,
-      })
-      vim.lsp.enable 'sourcekit'
+      -- vim.lsp.config('sourcekit', {
+      --   cmd = { 'xcrun', 'sourcekit-lsp' },
+      --   capabilities = capabilities,
+      -- })
+      -- vim.lsp.enable 'sourcekit'
     end,
   },
 

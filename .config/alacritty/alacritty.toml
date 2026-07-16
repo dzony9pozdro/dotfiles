@@ -1,3 +1,4 @@
+
 [window]
 dynamic_padding = true
 decorations = "Buttonless"
@@ -46,7 +47,4 @@ mods = "Command"
 action = "DecreaseFontSize"
 
 [general]
-import = [
-"/Users/jan/.config/alacritty/themes/autumn.toml",
-"~/.config/alacritty/font.toml"
-	]
+import = ["~/.config/alacritty/font.toml","/Users/jan/.config/alacritty/themes/one_dark.toml"]
