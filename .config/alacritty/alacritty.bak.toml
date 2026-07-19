@@ -1,4 +1,7 @@
 
+[env]
+TERM = "alacritty"
+
 [window]
 dynamic_padding = true
 decorations = "Buttonless"
@@ -47,4 +50,4 @@ mods = "Command"
 action = "DecreaseFontSize"
 
 [general]
-import = ["~/.config/alacritty/font.toml","/Users/jan/.config/alacritty/themes/terafox.toml"]
+import = ["~/.config/alacritty/font.toml","/Users/jan/.config/alacritty/themes/afterglow.toml"]

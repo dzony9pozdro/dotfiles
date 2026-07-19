@@ -41,6 +41,9 @@ end
 --
 --
 
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump { count = 1 } end)
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump { count = -1 } end)
+
 vim.keymap.set('n', '<leader>o', '<C-o>')
 vim.keymap.set('n', '<leader>i', '<C-i>')
 vim.keymap.set('n', '<leader>r', '<C-r>')
@@ -56,6 +59,15 @@ vim.keymap.set('v', '<', '<gv', { noremap = true })
 vim.keymap.set('v', '>', '>gv', { noremap = true })
 
 vim.o.conceallevel = 2
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    vim.api.nvim_set_hl(0, 'DiagnosticUnderlineError', { undercurl = true, sp = '#ff0044' })
+    vim.api.nvim_set_hl(0, 'DiagnosticUnderlineWarn', { undercurl = true, sp = '#ffaa00' })
+    vim.api.nvim_set_hl(0, 'DiagnosticUnderlineInfo', { undercurl = true, sp = '#89b4fa' })
+    vim.api.nvim_set_hl(0, 'DiagnosticUnderlineHint', { undercurl = true, sp = '#94e2d5' })
+  end,
+})
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'python', 'lua' },
@@ -123,19 +135,50 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
+--
+
+local function jump_diag(dir)
+  return function()
+    local errs = vim.diagnostic.count(0)[vim.diagnostic.severity.ERROR]
+    vim.diagnostic.jump {
+      count = dir,
+      severity = errs and errs > 0 and vim.diagnostic.severity.ERROR or nil,
+    }
+  end
+end
+
+vim.keymap.set('n', ']d', jump_diag(1))
+vim.keymap.set('n', '[d', jump_diag(-1))
+--
 vim.diagnostic.config {
   update_in_insert = false,
   severity_sort = true,
+  underline = true,
+  signs = true,
   float = { border = 'rounded', source = 'if_many' },
-  underline = { severity = vim.diagnostic.severity.ERROR },
-
-  -- Can switch between these as you prefer
-  virtual_text = true, -- Text shows up at the end of the line
-  virtual_lines = false, -- Teest shows up underneath the line, with virtual lines
-
-  -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
-  jump = { float = true },
+  virtual_text = false,
+  virtual_lines = { current_line = true },
+  jump = { float = false },
 }
+
+vim.api.nvim_set_hl(0, 'DiagnosticUnderlineError', { undercurl = true, sp = '#ff0044' })
+vim.api.nvim_set_hl(0, 'DiagnosticUnderlineWarn', { undercurl = true, sp = '#ffaa00' })
+vim.api.nvim_set_hl(0, 'DiagnosticUnderlineInfo', { undercurl = true, sp = '#89b4fa' })
+vim.api.nvim_set_hl(0, 'DiagnosticUnderlineHint', { undercurl = true, sp = '#94e2d5' })
+
+-- vim.diagnostic.config {
+--   update_in_insert = false,
+--   severity_sort = true,
+--   float = { border = 'rounded', source = 'if_many' },
+--   underline = true,  -- { severity = vim.diagnostic.severity.WARN },
+--
+--   -- Can switch between these as you prefer
+--   virtual_text = true, -- Text shows up at the end of the line
+--   virtual_lines = true, -- Teest shows up underneath the line, with virtual lines
+--
+--   -- Auto open the float, so you can easily read the errors when jumping with `[d` and `]d`
+--   jump = { float = true },
+-- }
 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -546,7 +589,9 @@ require('lazy').setup({
         basedpyright = {},
         ruby_lsp = {},
         tailwindcss = {},
-        clangd = {},
+        clangd = {
+          cmd = { 'clangd', '--clang-tidy', '--header-insertion=never' },
+        },
         emmet_language_server = {
           filetypes = { 'html', 'eruby', 'css', 'scss', 'javascriptreact', 'typescriptreact' },
         },

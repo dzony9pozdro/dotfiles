@@ -2,18 +2,28 @@ DISABLE_AUTO_UPDATE="true"
 
 export PATH="/usr/local/bin/nvim/bin:$PATH"
 
-export TERM=xterm-256color
+#
+# export PATH="$HOME/.dotfiles/scripts:$PATH"
+#
+#
+# export TERM=xterm-256color
 
 ZSH_DISABLE_COMPFIX=true
 
 alias hh="cd .."
 alias hhh="cd ../.."
-
+alias lt="ls -lat"
 alias pingstart="launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.aerospace.keepalive.plist"
 alias pingstop="launchctl bootout gui/$(id -u)/com.aerospace.keepalive"
 # git
+#
+#
 
+alias cnew='_cnew(){ ~/.dotfiles/scripts/cnew "$1" && cd "$1"; }; _cnew'
 source ~/.dotfiles/scripts/clone.zsh
+
+alias todo="nvim ~/Documents/TODO.md"
+
 alias desk="cd ~/Desktop/"
 alias karab="cd /Users/Jan/.config/karabiner/assets/complex_modifications"
 alias dots="cd ~/.dotfiles"
@@ -115,7 +125,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+ ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -189,6 +199,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Silence compinit errors about missing files
-ZSH_DISABLE_COMPFIX=true
 
 eval "$(rbenv init - zsh)"
